@@ -32,7 +32,6 @@ function editActivityList() {
         }
     };
 
-    // Refetch activities when the screen comes into focus
     useFocusEffect(
         useCallback(() => {
             getActivities();

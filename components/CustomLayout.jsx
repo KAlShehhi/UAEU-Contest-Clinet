@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 const CustomLayout = ({ title, children, hasBack, noScrollView, otherStyles }) => {
   return (
     <View className="bg-primary h-full">
-        <View className="bg-secondary rounded-br-3xl">
+        <View className="bg-secondary rounded-br-3xl shadow-2xl">
           <View className="flex-row pt-20 pl-2 pb-2">
             <TouchableOpacity 
               className={`${hasBack ? "" : "hidden"}`}

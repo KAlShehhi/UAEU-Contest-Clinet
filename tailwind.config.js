@@ -16,6 +16,9 @@ module.exports = {
                   },
                   errorRed: {
                     DEFAULT: "#ED4337"
+                  },
+                  warningOrange: {
+                    DEFAULT: "#FF5733"
                   }
               },
               fontFamily: {

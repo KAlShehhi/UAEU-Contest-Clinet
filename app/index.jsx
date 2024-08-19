@@ -30,9 +30,10 @@ const Welcome = () => {
                                 setLoading(false);
                                 console.log(token);
                                 console.log(userId);
-                                  if (role === 'USER') return router.replace("/home");
-                                  if (role === 'COACH') return router.replace("/homeCoach");
-                                  //if (role === 'COACH') return router.replace("coachSubPages/deleteActivity");
+                                //if (role === 'USER') return router.replace("/home");
+                                if (role === 'USER') return router.replace("/classes");
+                                if (role === 'COACH') return router.replace("/homeCoach");
+                                //if (role === 'COACH') return router.replace("coachSubPages/takeAttendance");
                             }
                         } catch (error) {
                             setLoading(false);

@@ -30,7 +30,7 @@ function CustomDropdown({ title, data, placeHolder, onSelect, otherStyles, initi
     };
 
     return (
-        <View className={`space-y-2 ${otherStyles}`}>
+        <View className={`space-y-0 ${otherStyles}`}>
             <Text className='text-textColor font-lBold text-2xl'>{title}</Text>
             <TouchableOpacity onPress={() => { setVisible(!visible) }} activeOpacity={1}>
                 <View className={`flex-row w-full h-16 px-4 bg-primary border-2 ${visible ? "border-secondary rounded-t-2xl" : "border-primary-300 rounded-2xl"} flex items-center`}>

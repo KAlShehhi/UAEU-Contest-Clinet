@@ -1,6 +1,5 @@
 import React from 'react'
 import { Text, View } from 'react-native'
-import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons/faCircleQuestion'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 
 function ActivityItemDetail({icon, text, value}) {

@@ -51,7 +51,7 @@ function HomeCoach() {
       <CustomBigButton
         text={"Take attendance"}
         icon={faClipboardUser}
-        handlePress={() => handlePress('takeAttendance')}
+        handlePress={() => handlePress('takeAttendance' , 'coachSubPages/takeAttendance')}
         disabled={isDisabled.takeAttendance}
       />
       <CustomBigButton
