@@ -252,6 +252,7 @@ const classes = () => {
                       showBottomSheet(activity._id)
                     }}
                     disabled={disabled}
+                    attended={activity.attended}
                   />
                 </View>
               ))}

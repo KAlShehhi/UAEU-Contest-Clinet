@@ -10,7 +10,7 @@ import BottomSheet from '@gorhom/bottom-sheet';
 
 function ActivityItemRegister({ 
   type, name, building, room, campus, points, time, date, attendees, 
-  expectedAttendees, cFname, cLname, handlePress, disabled, attendanceBtn, showBottomSheet
+  expectedAttendees, cFname, cLname, handlePress, disabled, attendanceBtn, showBottomSheet, attended
 }) {
   return (
     <View className="pb-3">
@@ -118,13 +118,25 @@ function ActivityItemRegister({
         </View>
         {attendanceBtn ? (
           <View className="basis-2/5">
-            <TouchableOpacity
-              onPress={showBottomSheet}
-              activeOpacity={0.7}
-              className={`bg-secondary rounded-xl p-1 m-2 justify-center items-center ${disabled ? 'opacity-50' : ''}`}
-            >
-              <Text className="text-primary font-lBold text-base">Attend</Text>
-            </TouchableOpacity>
+            {
+                attended ? 
+                <TouchableOpacity
+                onPress={showBottomSheet}
+                activeOpacity={0.7}
+                className={`bg-secondary rounded-xl p-1 m-2 justify-center items-center ${disabled ? 'opacity-50' : ''}`}
+              >
+                <Text className="text-primary font-lBold text-base">Attend</Text>
+              </TouchableOpacity>
+                :
+                <TouchableOpacity
+                activeOpacity={0.7}
+                className={`bg-secondary rounded-xl p-1 m-2 justify-center items-center ${attended ? 'opacity-10' : ''}`}
+                disabled={true}
+              >
+                <Text className="text-primary font-lBold text-base">Attended</Text>
+              </TouchableOpacity>
+            }
+
           </View>
         ) : (
           <View className="basis-2/5">

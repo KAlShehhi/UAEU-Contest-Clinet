@@ -2,16 +2,17 @@ import { StatusBar } from "expo-status-bar";
 import { Redirect, Tabs } from "expo-router";
 import { Image, Text, View } from "react-native";
 import { icons } from '../../constants/'
+import { faTrophy } from '@fortawesome/free-solid-svg-icons/faTrophy'
+import { faHome} from '@fortawesome/free-solid-svg-icons/faHome'
+import { faPersonWalking} from '@fortawesome/free-solid-svg-icons/faPersonWalking'
+import { faUser} from '@fortawesome/free-solid-svg-icons/faUser'
 
+
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 const TabIcon = ({ icon, color, name, focused }) => {
   return (
     <View className="flex items-center justify-center gap-1 pt-4">
-      <Image
-        source={icon}
-        resizeMode="contain"
-        tintColor={color}
-        className="w-7 h-7"
-      />
+      <FontAwesomeIcon icon={icon} style={{ color: `${color}` , padding: 12}} />
       <Text className={`${focused ? "font-lBold" : "font-lRegular"} text-sm`} style={{color : color}}>
         {name}
       </Text>
@@ -42,7 +43,7 @@ const TabLayout = () => {
             headerShown: false,
             tabBarIcon: ({color, focused}) => (
               <TabIcon
-                icon={icons.home}
+                icon={faHome}
                 color={color}
                 name="Home"
                 focused={focused}
@@ -57,7 +58,7 @@ const TabLayout = () => {
             headerShown: false,
             tabBarIcon: ({color, focused}) => (
               <TabIcon
-                icon={icons.sport}
+                icon={faPersonWalking}
                 color={color}
                 name="Activites"
                 focused={focused}
@@ -72,7 +73,7 @@ const TabLayout = () => {
             headerShown: false,
             tabBarIcon: ({color, focused}) => (
               <TabIcon
-                icon={icons.trophy}
+                icon={faTrophy}
                 color={color}
                 name="Tally"
                 focused={focused}
@@ -87,7 +88,7 @@ const TabLayout = () => {
             headerShown: false,
             tabBarIcon: ({color, focused}) => (
               <TabIcon
-                icon={icons.profile}
+                icon={faUser}
                 color={color}
                 name="Profile"
                 focused={focused}

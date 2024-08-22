@@ -1,9 +1,16 @@
-import React, { useState, useCallback } from 'react'
-import { View } from 'react-native'
-import CustomLayout from '../../components/CustomLayout'
-import CustomBigButton from '../../components/CustomBigButton'
-import { faChartSimple, faEye, faPlus, faPenToSquare, faTrash, faClipboardUser } from '@fortawesome/free-solid-svg-icons'
-import { router, useFocusEffect } from 'expo-router'
+import React, { useState, useCallback } from "react";
+import { View } from "react-native";
+import CustomLayout from "../../components/CustomLayout";
+import CustomBigButton from "../../components/CustomBigButton";
+import {
+  faChartSimple,
+  faEye,
+  faPlus,
+  faPenToSquare,
+  faTrash,
+  faClipboardUser,
+} from "@fortawesome/free-solid-svg-icons";
+import { router, useFocusEffect } from "expo-router";
 
 function HomeCoach() {
   const [isDisabled, setIsDisabled] = useState({
@@ -12,7 +19,7 @@ function HomeCoach() {
     viewActivities: false,
     createActivity: false,
     editActivity: false,
-    deleteActivity: false
+    deleteActivity: false,
   });
 
   useFocusEffect(
@@ -24,7 +31,7 @@ function HomeCoach() {
         viewActivities: false,
         createActivity: false,
         editActivity: false,
-        deleteActivity: false
+        deleteActivity: false,
       });
     }, [])
   );
@@ -32,7 +39,7 @@ function HomeCoach() {
   const handlePress = (buttonName, route) => {
     setIsDisabled((prevState) => ({
       ...prevState,
-      [buttonName]: true
+      [buttonName]: true,
     }));
 
     if (route) {
@@ -45,41 +52,52 @@ function HomeCoach() {
       <CustomBigButton
         text={"Activities statistics"}
         icon={faChartSimple}
-        handlePress={() => handlePress('activitiesStats')}
+        handlePress={() => handlePress("activitiesStats")}
         disabled={isDisabled.activitiesStats}
       />
       <CustomBigButton
         text={"Take attendance"}
         icon={faClipboardUser}
-        handlePress={() => handlePress('takeAttendance' , 'coachSubPages/takeAttendance')}
+        handlePress={() =>
+          handlePress("takeAttendance", "coachSubPages/takeAttendance")
+        }
         disabled={isDisabled.takeAttendance}
       />
       <CustomBigButton
         text={"View activities"}
         icon={faEye}
-        handlePress={() => handlePress('viewActivities', 'coachSubPages/viewActivites')}
+        handlePress={() =>
+          handlePress("viewActivities", "coachSubPages/viewActivites")
+        }
         disabled={isDisabled.viewActivities}
       />
       <CustomBigButton
         text={"Create activity"}
         icon={faPlus}
-        handlePress={() => handlePress('createActivity', 'coachSubPages/createActitivy')}
+        handlePress={() =>
+          handlePress("createActivity", "coachSubPages/createActitivy")
+        }
         disabled={isDisabled.createActivity}
       />
       <CustomBigButton
         text={"Edit activity"}
-        icon={faPenToSquare}editActivity
-        handlePress={() => handlePress('createActivity', 'coachSubPages/editActivityList')}
+        icon={faPenToSquare}
+        editActivity
+        handlePress={() =>
+          handlePress("createActivity", "coachSubPages/editActivityList")
+        }
         disabled={isDisabled.editActivity}
       />
       <CustomBigButton
         text={"Delete activity"}
         icon={faTrash}
-        handlePress={() => handlePress('deleteActivity', 'coachSubPages/deleteActivityList')}
+        handlePress={() =>
+          handlePress("deleteActivity", "coachSubPages/deleteActivityList")
+        }
         disabled={isDisabled.deleteActivity}
       />
     </CustomLayout>
-  )
+  );
 }
 
-export default HomeCoach
+export default HomeCoach;
