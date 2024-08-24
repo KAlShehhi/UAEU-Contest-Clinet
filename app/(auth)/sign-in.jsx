@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Dimensions, Alert} from 'react-native'
+import { View, Text, ScrollView, Dimensions, Alert, TouchableOpacity} from 'react-native'
 import { Link, router } from "expo-router";
 import { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -27,7 +27,7 @@ const SignIn = () => {
     let errors = {};
     if((form.email.length === 0)) errors.email = "Please enter your email"
     if(form.password.length === 0 ) errors.password = "Please enter a password"
-    if(!validateEmail(form.email)) errors.email = "Password enter a valid email"
+    if(!validateEmail(form.email)) errors.email = "Please enter a valid email"
     setErrors(errors)
     return Object.keys(errors).length === 0;
   }
@@ -56,7 +56,6 @@ const SignIn = () => {
         await SecureStore.setItemAsync('userId', userId);
         if(role === 'USER') router.replace("/home");
         if(role === 'COACH') router.replace("/homeCoach");
-   
       }).catch((error) => {
         errors.invalid = "Invalid email or password";
         setErrors(errors);
@@ -92,7 +91,11 @@ const SignIn = () => {
                   otherStyles="mt-7"
                   isPassword={true}
                 />
-                <Text className="text-textColor pt-3 text-right font-lBold">Forget Password?</Text>
+                <TouchableOpacity onPress={() => {
+                  router.push("forgetPassword")
+                }}>
+                  <Text className="text-textColor pt-3 text-right font-lBold">Forget Password?</Text>
+                </TouchableOpacity>
                 <CustomButton
                   title="Login"
                   handlePress={submit}

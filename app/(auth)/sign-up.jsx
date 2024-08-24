@@ -39,7 +39,7 @@ const SignUp = () => {
     if((form.lastName.length === 0)) errors.lastName = "Please enter your last name"
     if((form.email.length === 0)) errors.email = "Please enter your email"
     if(form.password.length === 0 ) errors.password = "Please enter a password"
-    if(!validateEmail(form.email)) errors.email = "Password enter a valid email"
+    if(!validateEmail(form.email)) errors.email = "Please enter a valid email"
     if((form.password != form.confirmPassword)) errors.password = "Password and Confirm password do not match"
     setErrors(errors)
     return Object.keys(errors).length === 0;

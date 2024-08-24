@@ -79,7 +79,7 @@ const profile = () => {
                                     {avatarLoading ? (
                                         <ActivityIndicator color="#FFFFFF" />
                                     ) : (
-                                        <FontAwesomeIcon icon={faRotate} style={{ color: "#FFFFFF", padding: 3 }} />
+                                        <FontAwesomeIcon icon={faRotate} style={{ color: "#FFFFFF", }} size={10} />
                                     )}
                                 </TouchableOpacity>
                             </View>
